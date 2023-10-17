@@ -71,5 +71,3 @@
 
 --6--
 
-46) update sales_order set s_order_date = to_date('27/7/96', 'dd/mmm/yy') where client_no ='C00001';
-
