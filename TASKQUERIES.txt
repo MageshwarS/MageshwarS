@@ -70,4 +70,26 @@
 45) select dely_date, sysdate as today, to_date(sysdate) - to_date(dely_date) as no_of_days_in_between from sales_order;
 
 --6--
+46) update sales_order set s_order_date = to_date('24-07-96','dd-mm-yy') where client_no ='C00001'; 
+(Throws check constraint voilated error)
+
+47) update product_master set sell_price = 1150 where description = '1.44 Floppy Drive';
+(0 rows updated as '1.44 Floppy Drive' is not present in the table)
+
+48) delete from sales_order where s_order_no='O19001'; 
+(Integrity constraint voilated, child record found)
+
+49) delete from sales_order where dely_date <to_date('10-JUL-96','dd-mon-yy');
+(Integrity constraint voilated, child record found)
+
+50) update client_master set city = 'Bombay' where client_no = 'C00005';
+(Will work but wont make sense as pincode and state will remain same what wont suit updated city)
+
+51) update sales_order set dely_date= to_date('16-08-96','dd-mm-yy') where s_order_no='O10008';
+
+52) update client_master set bal_due= 1000 where client_no='C00001';
+
+53)update product_master set cost_price = 950 where description = '1.22 Floppy Drive';
+(0 rows updated as '1.22 Floppy Drive' is not present in the table)
+
 
